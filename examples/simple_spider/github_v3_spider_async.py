@@ -26,9 +26,9 @@ class GithubDeveloperSpider(Spider):
                 continue
             catalogue.append(cat)
         urls = [page.link for page in catalogue][:10]
-        async for response in self.multiple_request(urls, is_gather=True):
-            title = catalogue[response.index].title
-            yield self.parse_page(response, title)
+        async for resp in self.multiple_request(urls, is_gather=True):
+            title = catalogue[resp.index].title
+            yield self.parse_page(resp, title)
 
     async def parse_page(self, response, title):
         item = await PageItem.get_item(html=response.html)

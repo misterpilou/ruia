@@ -22,6 +22,7 @@ class Response(object):
                  cookies,
                  history,
                  headers: dict = None,
+                 content_disposition = None,
                  status: int = -1,
                  aws_json: Callable = None,
                  aws_read: Callable = None,
@@ -36,6 +37,7 @@ class Response(object):
         self._cookies = cookies
         self._history = history
         self._headers = headers
+        self._content_disposition = content_disposition
         self._status = status
 
         self._aws_json = aws_json
@@ -93,6 +95,10 @@ class Response(object):
     @property
     def headers(self):
         return self._headers
+
+    @property
+    def content_disposition(self):
+        return self._content_disposition
 
     @property
     def status(self):

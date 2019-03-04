@@ -13,6 +13,8 @@ codecov = "*"
 aiohttp = ">=3.3.2"
 cssselect = "*"
 lxml = "*"
+aiofiles = "*"
+motor = "*"
 
 [requires]
 python_version = "3.6"

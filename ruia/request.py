@@ -92,6 +92,7 @@ class Request(object):
                                 metadata=self.metadata,
                                 cookies=resp.cookies,
                                 headers=resp.headers,
+                                content_disposition=resp.content_disposition,
                                 history=resp.history,
                                 status=resp.status,
                                 aws_json=resp.json,
